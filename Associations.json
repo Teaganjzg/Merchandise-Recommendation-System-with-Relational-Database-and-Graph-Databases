@@ -1,0 +1,31 @@
+﻿{
+  "source": { "file": { "path": "./datasets/972K.csv" } },
+  "extractor": { "csv": {} },
+  "transformers": [
+    { "merge": { "joinFieldName": "Description1", "lookup": "Items.Description" } },
+    { "vertex": {"class": "Items", "skipDuplicates": true} },
+    { "edge": { "class": "Associations",
+                "joinFieldName": "Description2",
+                "lookup": "Items.Description",
+                "direction": "out",
+                "edgeFields": { "weight": "${input.Association_Times}"},
+                "skipDuplicates": true,
+                "unresolvedLinkAction": "CREATE"
+              }
+    },
+    { "field": { "fieldNames": ["Description1","Description2"], "operation": "remove" } }
+    
+  ],
+  "loader": {
+    "orientdb": {
+       "dbURL": "plocal:./databases/csci5559",
+       "dbType": "graph",
+       "classes": [
+         {"name": "Items", "extends": "V"},
+         {"name": "Associations", "extends": "E"}
+       ], "indexes": [
+         {"class":"Items", "fields":["Description:string"], "type":"UNIQUE" }
+       ]
+    }
+  }
+}
