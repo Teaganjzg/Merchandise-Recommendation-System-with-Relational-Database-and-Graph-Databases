@@ -15,10 +15,13 @@ The performance measures **data storage**, **data import time**, **execution tim
 ## <a name="implem">Implementation</a>
 * Raw Data<br />
   [Online Retail Data Set](https://archive.ics.uci.edu/ml/datasets/Online+Retail)
-* SQL Server<br />
+* SQL Server 2012<br />
   Download the .iso file from [here] and launch it.
-* Neo4j<br />
+* Neo4j 3.2.3<br />
   Download the Neo4j from [here](https://neo4j.com/download/community-edition/) and install it.
+* Data Preprocessing<br />
+  1. The original data are stored as xlsx files. SQL Server 2012 Import Wizard is capable to import xls file. However, the excel(xls) file       has a row limitation so we have to separate the data into multiple files then import it into SQL DB respectively. [csci5559_database.7z](csci5559_database) is the database backup.<br />
+  2. 
 ## <a name="results">Results</a>
 ## <a name="credits">Credits</a>
 ## <a name="credits">Contact</a>
