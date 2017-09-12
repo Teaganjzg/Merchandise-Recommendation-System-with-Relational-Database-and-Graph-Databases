@@ -14,7 +14,12 @@ According to the paper “XGDBench: A benchmarking platform for graph stores in 
 The performance measures **data storage**, **data import time**, **execution time**, **records of recommendation returned** and **recommendation depth**. the recommendation depth indicates what level is the recommendation at, for example, there is an association like A--B--C, then product C is the second depth recommendation of product A. After the comparison, we show the result and make an analysis why we get that result.
 ## <a name="implem">Implementation</a>
 * Raw Data
+
  [Online Retail Data Set](https://archive.ics.uci.edu/ml/datasets/Online+Retail)
+* SQL Server
+  Download the .iso file from [here] and launch it.
+* Neo4j
+  Download the Neo4j from [here](https://neo4j.com/download/community-edition/) and install it.
 ## <a name="results">Results</a>
 ## <a name="credits">Credits</a>
 ## <a name="credits">Contact</a>
