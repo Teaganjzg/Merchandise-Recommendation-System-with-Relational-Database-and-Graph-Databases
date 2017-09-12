@@ -20,7 +20,7 @@ The performance measures **data storage**, **data import time**, **execution tim
 * Neo4j 3.2.3<br />
   Download the Neo4j from [here](https://neo4j.com/download/community-edition/) and install it.
 * Data Preprocessing<br />
-  1. The original data are stored as xlsx files. SQL Server 2012 Import Wizard is capable to import xls file. However, the excel(xls) file       has a row limitation so we have to separate the data into multiple files then import it into SQL DB respectively. [csci5559_database.7z](csci5559_database) is the database backup.<br />
+  1. The original data are stored as xlsx files. SQL Server 2012 Import Wizard is capable to import xls file. However, the excel(xls) file       has a row limitation so we have to separate the data into multiple files then import it into SQL DB respectively. [csci5559_database.7z]( Merchandise-Recommendation-System-with-Relational-Database-and-Graph-Databases/csci5559_database.7z ) is the database backup.<br />
   2. 
 ## <a name="results">Results</a>
 ## <a name="credits">Credits</a>
