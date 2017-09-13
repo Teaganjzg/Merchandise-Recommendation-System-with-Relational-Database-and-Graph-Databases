@@ -104,6 +104,13 @@ The performance measures **data storage**, **data import time**, **execution tim
    return distinct q.Description
    order by q.Description desc
    ```
+ * Trouble Shooting:
+    1. Neo4j:
+       RESET
+       ```
+       START r=relationship(*) DELETE r;
+       START n=node(*) DELETE n;
+       ```
 
 
   
