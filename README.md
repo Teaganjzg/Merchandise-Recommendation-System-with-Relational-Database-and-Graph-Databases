@@ -34,7 +34,7 @@ load csv with headers from "https://github.com/Teaganjzg/Merchandise-Recommendat
 create (n:Items)
 set n=row
 ```
-   **Add Index:**<br />
+   &nbsp;&nbsp;**Add Index:**<br />
 `CREATE INDEX ON :Items(Description)`
 
 
