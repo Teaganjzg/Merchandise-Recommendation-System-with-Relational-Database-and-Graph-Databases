@@ -101,6 +101,9 @@ The performance measures **data storage**, **data import time**, **execution tim
    return distinct q.Description
    order by q.Description desc
    ```
+ * Data Importion with OrientDB:
+   In order to import our Associations data into the OrientDB to test the query performance, **ETL** (Extractor Transformer and Loader) which is a module for OrientDB provides support for moving data to and from OrientDB databases using ETL processes is needed. Basically, the process of importing using ETL is to call the **oetl.bat** located in bin directory by command line to run the specific [JSON file](https://github.com/Teaganjzg/Merchandise-Recommendation-System-with-Relational-Database-and-Graph-Databases/blob/master/Associations.json). 
+   ![image](https://user-images.githubusercontent.com/31550461/30387766-d8d9350e-986a-11e7-82f1-8e8291b08856.png)
  * Trouble Shooting:
     1. Neo4j:
        RESET
@@ -108,7 +111,8 @@ The performance measures **data storage**, **data import time**, **execution tim
        START r=relationship(*) DELETE r;
        START n=node(*) DELETE n;
        ```
-
+    2. OrientDB:
+       In the JSON file, we should state the directory the CSV file belongs to, which classes the vertices and edges belong to, which folder we need the database files to be generated to. Because the CSV file has three column, two of them are the descriptions of the associated items, one of them is the association times which is expected to be loaded as “weight” of associations, therefore, how the two columns are read by ETL and how two vertices are connected need to be fully considered and included in that JSON file as well. 
 
   
 ## <a name="results">Results</a>
