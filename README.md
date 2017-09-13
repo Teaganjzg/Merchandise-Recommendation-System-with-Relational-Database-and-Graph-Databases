@@ -65,7 +65,7 @@ The performance measures **data storage**, **data import time**, **execution tim
    where n.Description = 'ZINC TOP  2 DOOR WOODEN SHELF'
    return p.Description, a.weight
    ```
-   <br />
+  
    Depth = 2:
    ```
    match (n:Items)-[a:Association]-(p)-[b:Association]-(q)
