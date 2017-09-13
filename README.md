@@ -29,11 +29,12 @@ The performance measures **data storage**, **data import time**, **execution tim
   After launching Neo4j, a web page need to be loaded by browser to manipulate the database. Neo4j can import data simply through a bunch of **Cypher statements** which is very intuitive.<br />
   **Add item nodes:**
 
-```load csv with headers from "https://github.com/Teaganjzg/Merchandise-Recommendation-System-with-Relational-Database-and-Graph-Databases/blob/master/Dataset/DescriptionList.csv" as row
+```
+load csv with headers from "https://github.com/Teaganjzg/Merchandise-Recommendation-System-with-Relational-Database-and-Graph-Databases/blob/master/Dataset/DescriptionList.csv" as row
 create (n:Items)
 set n=row
 ```
-  **Add Index:**
+   **Add Index:**<br />
 `CREATE INDEX ON :Items(Description)`
 
 
