@@ -31,9 +31,10 @@ The performance measures **data storage**, **data import time**, **execution tim
 
 ```load csv with headers from "https://github.com/Teaganjzg/Merchandise-Recommendation-System-with-Relational-Database-and-Graph-Databases/blob/master/Dataset/DescriptionList.csv" as row
 create (n:Items)
-set n=row```<br />
+set n=row
+```
   **Add Index:**
-```CREATE INDEX ON :Items(Description)```
+`CREATE INDEX ON :Items(Description)`
 
 
   
