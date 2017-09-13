@@ -16,13 +16,27 @@ The performance measures **data storage**, **data import time**, **execution tim
 * Raw Data<br />
   [Online Retail Data Set](https://archive.ics.uci.edu/ml/datasets/Online+Retail)
 * SQL Server 2012<br />
-  Download the .iso file from [here] and launch it.
+  Download the .iso file from [here](https://mega.nz/#!9mgBCYaQ!qbbehFKVTtcYVk6CCe3AQ6ptYYLKc6vz-7YWssiea3Q) and launch it.
 * Neo4j 3.2.3<br />
   Download the Neo4j from [here](https://neo4j.com/download/community-edition/) and install it.
 * Data Preprocessing<br />
   1. The original data are stored as xlsx files. SQL Server 2012 Import Wizard is capable to import xls file. However, the excel(xls) file       has a row limitation so we have to separate the data into multiple files then import it into SQL DB respectively. [csci5559_database.7z]( Merchandise-Recommendation-System-with-Relational-Database-and-Graph-Databases/csci5559_database.7z ) is the database backup.<br />
-  2. Execute [SQLCreateAssocaition.sql]( Merchandise-Recommendation-System-with-Relational-Database-and-Graph-Databases/SQLCreateAssociation.sql ) to create Association table.
-     ![image](https://user-images.githubusercontent.com/31550461/30353432-0db7412c-97e3-11e7-991a-6aae74bb55bf.png)
+  2. Execute [SQLCreateAssocaition.sql]( Merchandise-Recommendation-System-with-Relational-Database-and-Graph-Databases/SQLCreateAssociation.sql ) to create Association table.<br />
+     ![image](https://user-images.githubusercontent.com/31550461/30353432-0db7412c-97e3-11e7-991a-6aae74bb55bf.png)<br />
+* Data Exportion<br />
+  The Association table can be exported as [972K.csv]()<br /> 
+* Data Importion<br />
+  After launching Neo4j, a web page need to be loaded by browser to manipulate the database. Neo4j can import data simply through a bunch of **Cypher statements** which is very intuitive.<br />
+  **Add item nodes:**
+
+```load csv with headers from "https://github.com/Teaganjzg/Merchandise-Recommendation-System-with-Relational-Database-and-Graph-Databases/blob/master/Dataset/DescriptionList.csv" as row
+create (n:Items)
+set n=row```<br />
+  **Add Index:**
+```CREATE INDEX ON :Items(Description)```
+
+
+  
 ## <a name="results">Results</a>
 ## <a name="credits">Credits</a>
 ## <a name="credits">Contact</a>
