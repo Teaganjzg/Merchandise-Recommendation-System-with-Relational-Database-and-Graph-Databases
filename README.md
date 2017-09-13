@@ -35,7 +35,7 @@ The performance measures **data storage**, **data import time**, **execution tim
   set n=row
   ```
    &nbsp;&nbsp;**Add Index:**<br />
-  `CREATE INDEX ON :Items(Description)`
+  `CREATE INDEX ON :Items(Description)`<br />
    **Add relations:**
    ```
    LOAD CSV WITH HEADERS FROM "https://github.com/Teaganjzg/Merchandise-Recommendation-System-with-Relational-Database-and-Graph-Databases/blob/master/Dataset/972K_1_of_3.csv" AS row
