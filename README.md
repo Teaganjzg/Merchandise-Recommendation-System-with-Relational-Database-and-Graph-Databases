@@ -52,40 +52,56 @@ The performance measures **data storage**, **data import time**, **execution tim
    MERGE (n1:Items {Description: row.Description1})
    MERGE (n2:Items {Description: row.Description2})
    MERGE (n1)-[a:Association{weight:row.Association_Times}]->(n2)
-   ```<br />
-   **BFS with different depths:**
    ```
+   <br />
+   **BFS with different depths:**
+  
    Depth =1:
-match (n:Items)-[a:Association]-(p)
-where n.Description = 'ZINC TOP  2 DOOR WOODEN SHELF'
-return p.Description, a.weight
+   ```
+   match (n:Items)-[a:Association]-(p)
+   where n.Description = 'ZINC TOP  2 DOOR WOODEN SHELF'
+   return p.Description, a.weight
+   ```
+   <br />
 
-Depth = 2
-match (n:Items)-[a:Association]-(p)-[b:Association]-(q)
-where n.Description = 'ZINC TOP  2 DOOR WOODEN SHELF'
-return p.Description, a.weight, q.Description, b.weight
+   Depth = 2:
+   ```
+   match (n:Items)-[a:Association]-(p)-[b:Association]-(q)
+   where n.Description = 'ZINC TOP  2 DOOR WOODEN SHELF'
+   return p.Description, a.weight, q.Description, b.weight
+   ```
+   <br />
+   
 
-Depth = 3
-match (n:Items)-[a:Association]-(p)-[b:Association]-(q)-[c:Association]-(u)
-where n.Description = 'ZINC TOP  2 DOOR WOODEN SHELF'
-return distinct u.Description
+   Depth = 3:
+   ```
+   match (n:Items)-[a:Association]-(p)-[b:Association]-(q)-[c:Association]-(u)
+   where n.Description = 'ZINC TOP  2 DOOR WOODEN SHELF'
+   return distinct u.Description
+   ```
+   <br />
 
-Depth = 4
-match (n:Items)-[a:Association]-(p)-[b:Association]-(q)-[c:Association]-(u)-[d:Association]-(v)
-where n.Description = 'ZINC TOP  2 DOOR WOODEN SHELF' 
-return distinct p.Description, a.weight, q.Description, b.weight,u.Description, c.weight,v.Description, d.weight
+   Depth = 4:
+   ```  
+   match (n:Items)-[a:Association]-(p)-[b:Association]-(q)-[c:Association]-(u)-[d:Association]-(v)
+   where n.Description = 'ZINC TOP  2 DOOR WOODEN SHELF' 
+   return distinct p.Description, a.weight, q.Description, b.weight,u.Description, c.weight,v.Description, d.weight
+   ```
+   <br />
+   Depth = 5:
+   ```
+   match (n:Items)-[a:Association]-(p)-[b:Association]-(q)-[c:Association]-(u)-[d:Association]-(v)-[f:Association]-(w)
+   where n.Description = 'ZINC TOP  2 DOOR WOODEN SHELF'
+   return distinct p.Description, a.weight, q.Description, b.weight,u.Description, c.weight,v.Description, d.weight,w.Description,   f.weight
+   ```
 
-Depth = 5
-match (n:Items)-[a:Association]-(p)-[b:Association]-(q)-[c:Association]-(u)-[d:Association]-(v)-[f:Association]-(w)
-where n.Description = 'ZINC TOP  2 DOOR WOODEN SHELF'
-return distinct p.Description, a.weight, q.Description, b.weight,u.Description, c.weight,v.Description, d.weight,w.Description, f.weight
-
-Return Description on depth = 2
-match (n:Items)-[a:Association]-(p)-[b:Association]-(q)
-where n.Description = 'ZINC TOP  2 DOOR WOODEN SHELF'
-return distinct q.Description
-order by q.Description desc
-```
+   Return Description on depth = 2:
+   ```
+   match (n:Items)-[a:Association]-(p)-[b:Association]-(q)
+   where n.Description = 'ZINC TOP  2 DOOR WOODEN SHELF'
+   return distinct q.Description
+   order by q.Description desc
+   ```
 
 
   
