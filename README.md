@@ -29,13 +29,30 @@ The performance measures **data storage**, **data import time**, **execution tim
   After launching Neo4j, a web page need to be loaded by browser to manipulate the database. Neo4j can import data simply through a bunch of **Cypher statements** which is very intuitive.<br />
   **Add item nodes:**
 
-```
-load csv with headers from "https://github.com/Teaganjzg/Merchandise-Recommendation-System-with-Relational-Database-and-Graph-Databases/blob/master/Dataset/DescriptionList.csv" as row
-create (n:Items)
-set n=row
-```
+  ```
+  load csv with headers from "https://github.com/Teaganjzg/Merchandise-Recommendation-System-with-Relational-Database-and-Graph-      Databases/blob/master/Dataset/DescriptionList.csv" as row
+  create (n:Items)
+  set n=row
+  ```
    &nbsp;&nbsp;**Add Index:**<br />
-`CREATE INDEX ON :Items(Description)`
+  `CREATE INDEX ON :Items(Description)`
+   **Add relations:**
+   ```
+   LOAD CSV WITH HEADERS FROM "https://github.com/Teaganjzg/Merchandise-Recommendation-System-with-Relational-Database-and-Graph-Databases/blob/master/Dataset/972K_1_of_3.csv" AS row
+   MERGE (n1:Items {Description: row.Description1})
+   MERGE (n2:Items {Description: row.Description2})
+   MERGE (n1)-[a:Association{weight:row.Association_Times}]->(n2)
+
+   LOAD CSV WITH HEADERS FROM "https://github.com/Teaganjzg/Merchandise-Recommendation-System-with-Relational-Database-and-Graph-Databases/blob/master/Dataset/972K_2_of_3.csv" AS row
+   MERGE (n1:Items {Description: row.Description1})
+   MERGE (n2:Items {Description: row.Description2})
+   MERGE (n1)-[a:Association{weight:row.Association_Times}]->(n2)
+
+   LOAD CSV WITH HEADERS FROM "https://github.com/Teaganjzg/Merchandise-Recommendation-System-with-Relational-Database-and-Graph-Databases/blob/master/Dataset/972K_3_of_3.csv" AS row
+   MERGE (n1:Items {Description: row.Description1})
+   MERGE (n2:Items {Description: row.Description2})
+   MERGE (n1)-[a:Association{weight:row.Association_Times}]->(n2)
+   ```
 
 
   
