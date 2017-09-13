@@ -122,6 +122,11 @@ The performance measures **data storage**, **data import time**, **execution tim
        ```
     2. OrientDB:
        In the JSON file, we should state the directory the CSV file belongs to, which classes the vertices and edges belong to, which folder we need the database files to be generated to. Because the CSV file has three column, two of them are the descriptions of the associated items, one of them is the association times which is expected to be loaded as “weight” of associations, therefore, how the two columns are read by ETL and how two vertices are connected need to be fully considered and included in that JSON file as well. 
+       
+       To make sure the data importion is correct we should make sure useLightweightEdge is set as false
+       ```
+       alter database custom useLightweightEdges=false
+       ```
 
   
 ## <a name="results">Results</a>
