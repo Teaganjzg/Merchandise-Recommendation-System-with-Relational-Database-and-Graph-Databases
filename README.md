@@ -57,7 +57,7 @@ The performance measures **data storage**, **data import time**, **execution tim
    ```
    <br />
    
-   **BFS with different depths:**
+   **Running test case with 5 different depths:**
   
    Depth =1:
    ```
@@ -104,6 +104,14 @@ The performance measures **data storage**, **data import time**, **execution tim
  * Data Importion with OrientDB:
    In order to import our Associations data into the OrientDB to test the query performance, **ETL** (Extractor Transformer and Loader) which is a module for OrientDB provides support for moving data to and from OrientDB databases using ETL processes is needed. Basically, the process of importing using ETL is to call the **oetl.bat** located in bin directory by command line to run the specific [JSON file](https://github.com/Teaganjzg/Merchandise-Recommendation-System-with-Relational-Database-and-Graph-Databases/blob/master/Associations.json). 
    ![image](https://user-images.githubusercontent.com/31550461/30387766-d8d9350e-986a-11e7-82f1-8e8291b08856.png)
+   **Running test case**
+   Depth = 1:
+   ``` select expand(both('Associations')) from (select from Items where Description = "PACK OF 72 RETROSPOT CAKE CASES")
+   ```
+   Depth = 2:
+   ```
+     select expand(both('Associations').both('Associations')) from (select from Items where Description = "PACK OF 72 RETROSPOT CAKE CASES")
+   ```
  * Trouble Shooting:
     1. Neo4j:
        RESET
