@@ -21,13 +21,13 @@ The performance measures **data storage**, **data import time**, **execution tim
   Download the Neo4j from [here](https://neo4j.com/download/community-edition/) and install it. After launching Neo4j, a web page need to be loaded by browser to manipulate the database. 
 * OrientDB 2.2.18<br />
   Download and extract OrientDB by selecting the appropriate package provided on [OrientDB download website](http://orientdb.com/orientdb/). Start the server by running the **server.bat** (Windows System) scripts located in the bin folder. Once OrientDB is running, enter the following URL in a browser window: http://localhost:2480. This is the Studio which is a web tool for Databases. 
-* Data Preprocessing<br />
+* Data Preprocessing with SQL Server<br />
   1. The original data are stored as xlsx files. SQL Server 2012 Import Wizard is capable to import xls file. However, the excel(xls) file has a row limitation so we have to separate the data into multiple files then import it into SQL DB respectively. [csci5559_database.7z](https://github.com/Teaganjzg/Merchandise-Recommendation-System-with-Relational-Database-and-Graph-Databases/blob/master/csci5559_database.7z) is the database backup.<br />
-  2. Execute [SQLCreateAssocaition.sql]( Merchandise-Recommendation-System-with-Relational-Database-and-Graph-Databases/SQLCreateAssociation.sql ) to create Association table.<br />
+  2. Execute [SQLCreateAssocaition.sql](https://github.com/Teaganjzg/Merchandise-Recommendation-System-with-Relational-Database-and-Graph-Databases/blob/master/SQLCreateAssociation.sql) to create Association table.<br />
      ![image](https://user-images.githubusercontent.com/31550461/30353432-0db7412c-97e3-11e7-991a-6aae74bb55bf.png)<br />
-* Data Exportion<br />
+* Data Exportion with SQL Server<br />
   The Association table can be exported as [972K.csv](https://github.com/Teaganjzg/Merchandise-Recommendation-System-with-Relational-Database-and-Graph-Databases/blob/master/Dataset/972K.7z)<br /> 
-* Data Importion<br />
+* Data Importion with Neo4j<br />
   Neo4j can import data simply through a bunch of **Cypher statements** which is very intuitive.<br />
   **Add item nodes:**
 
@@ -66,7 +66,6 @@ The performance measures **data storage**, **data import time**, **execution tim
    return p.Description, a.weight
    ```
    <br />
-
    Depth = 2:
    ```
    match (n:Items)-[a:Association]-(p)-[b:Association]-(q)
@@ -74,8 +73,6 @@ The performance measures **data storage**, **data import time**, **execution tim
    return p.Description, a.weight, q.Description, b.weight
    ```
    <br />
-   
-
    Depth = 3:
    ```
    match (n:Items)-[a:Association]-(p)-[b:Association]-(q)-[c:Association]-(u)
@@ -83,7 +80,6 @@ The performance measures **data storage**, **data import time**, **execution tim
    return distinct u.Description
    ```
    <br />
-
    Depth = 4:
    ```  
    match (n:Items)-[a:Association]-(p)-[b:Association]-(q)-[c:Association]-(u)-[d:Association]-(v)
@@ -91,14 +87,12 @@ The performance measures **data storage**, **data import time**, **execution tim
    return distinct p.Description, a.weight, q.Description, b.weight,u.Description, c.weight,v.Description, d.weight
    ```
    <br />
-   
    Depth = 5:
    ```
    match (n:Items)-[a:Association]-(p)-[b:Association]-(q)-[c:Association]-(u)-[d:Association]-(v)-[f:Association]-(w)
    where n.Description = 'ZINC TOP  2 DOOR WOODEN SHELF'
    return distinct p.Description, a.weight, q.Description, b.weight,u.Description,  c.weight,v.Description,d.weight,w.Description,f.weight
    ```
-
    Return Description on depth = 2:
    ```
    match (n:Items)-[a:Association]-(p)-[b:Association]-(q)
