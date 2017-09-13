@@ -1,0 +1,19 @@
+﻿{
+  "source": { "file": { "path": "./datasets/Result.csv" } },
+  "extractor": { "csv": {} },
+  "transformers": [
+    { "vertex": { "class": "Result" } }
+  ],
+  "loader": {
+    "orientdb": {
+       "dbURL": "plocal:./databases/test",
+       "dbType": "graph",
+       "classes": [
+         {"name": "Items", "extends": "V"},
+         {"name": "Associations", "extends": "E"}
+       ], "indexes": [
+         {"class":"Items", "fields":["SQL:string"], "type":"UNIQUE" }
+       ]
+    }
+  }
+}
