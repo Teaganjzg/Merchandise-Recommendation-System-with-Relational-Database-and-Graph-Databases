@@ -54,6 +54,7 @@ The performance measures **data storage**, **data import time**, **execution tim
    MERGE (n1)-[a:Association{weight:row.Association_Times}]->(n2)
    ```
    <br />
+   
    **BFS with different depths:**
   
    Depth =1:
@@ -88,11 +89,12 @@ The performance measures **data storage**, **data import time**, **execution tim
    return distinct p.Description, a.weight, q.Description, b.weight,u.Description, c.weight,v.Description, d.weight
    ```
    <br />
+   
    Depth = 5:
    ```
    match (n:Items)-[a:Association]-(p)-[b:Association]-(q)-[c:Association]-(u)-[d:Association]-(v)-[f:Association]-(w)
    where n.Description = 'ZINC TOP  2 DOOR WOODEN SHELF'
-   return distinct p.Description, a.weight, q.Description, b.weight,u.Description, c.weight,v.Description, d.weight,w.Description,   f.weight
+   return distinct p.Description, a.weight, q.Description, b.weight,u.Description,  c.weight,v.Description,d.weight,w.Description,f.weight
    ```
 
    Return Description on depth = 2:
