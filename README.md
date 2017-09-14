@@ -130,5 +130,18 @@ The performance measures **data storage**, **data import time**, **execution tim
 
   
 ## <a name="results">Results</a>
+  * Data Storage Comparison<br />
+    ![image](https://user-images.githubusercontent.com/31550461/30406086-cc41ce36-98ac-11e7-91ea-19e995a08fbd.png)<br />
+    ![image](https://user-images.githubusercontent.com/31550461/30406102-e796990a-98ac-11e7-99e0-85b33a21560a.png)<br />
+  * Data Import Time Comparison<br />
+    ![image](https://user-images.githubusercontent.com/31550461/30406128-1140183a-98ad-11e7-8e42-13b9fb079c1d.png)<br />
+  * Recommendation Search Time Comparison<br /> 
+    ![image](https://user-images.githubusercontent.com/31550461/30406169-65c16dc8-98ad-11e7-8180-fb1c87d1c92f.png)<br />
+
 ## <a name="credits">Credits</a>
-## <a name="credits">Contact</a>
+   **Other Team Members :** Qian Mai, Xiaozheng He, Kaicheng Yang.
+   All the codes uploaded in this repository are written by Zuge Jin.
+   
+## <a name="contact">Contact</a>
+   Name: Zuge Jin
+   E-mail: jinzuge1@gmail.com
