@@ -139,9 +139,9 @@ The performance measures **data storage**, **data import time**, **execution tim
     ![image](https://user-images.githubusercontent.com/31550461/30406169-65c16dc8-98ad-11e7-8180-fb1c87d1c92f.png)<br />
 
 ## <a name="credits">Credits</a>
-   **Other Team Members :** Qian Mai, Xiaozheng He, Kaicheng Yang.
+   **Other Team Members :** Qian Mai, Xiaozheng He, Kaicheng Yang.<br />
    All the codes uploaded in this repository are written by Zuge Jin.
    
 ## <a name="contact">Contact</a>
-   Name: Zuge Jin
+   Name: Zuge Jin<br />
    E-mail: jinzuge1@gmail.com
